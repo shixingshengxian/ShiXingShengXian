@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <transition>
-      <router-view></router-view>
-    </transition>
+   
+      <transition>
+        <router-view></router-view>
+      </transition>
+   
 
     <div class="cg-flxed">
       <router-link to="/" class="cg-box">
@@ -19,7 +21,6 @@
         </span>
         <span class="span-b">分类</span>
       </router-link>
-    
       <router-link to="/shopcart" class="cg-box">
         <span class="span-t">
           <i class="span-icon iconfont">&#xe8e7;</i>
@@ -53,11 +54,14 @@ export default {
 };
 </script>
 
+
+
 <style lang="scss">
 * {
   padding: 0;
   margin: 0;
 }
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -81,6 +85,7 @@ export default {
 
   .cg-flxed {
     position: fixed;
+    z-index: 99;
     height: 50px;
     left: 0;
     bottom: 0;

@@ -1,9 +1,10 @@
 .cart-bottom-wrapper {
-  position: fixed;
-  bottom: 3rem;
+  /* position: fixed;
+  bottom: 3rem; */
   width: 100%;
   z-index: 10;
-  left: 0;
+  /* left: 0; */
+  height: 3.625rem;
 }
 
 .cart-bottom {

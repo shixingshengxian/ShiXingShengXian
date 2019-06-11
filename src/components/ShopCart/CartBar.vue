@@ -49,6 +49,7 @@
 </template>
 
 <style scoped>
+
 .cart-bottom-wrapper {
   position: fixed;
   bottom: 3rem;
