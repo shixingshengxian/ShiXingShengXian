@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <transition>
-      <router-view></router-view>
-    </transition>
+    <div class="content">
+      <transition>
+        <router-view></router-view>
+      </transition>
+    </div>
 
     <div class="cg-flxed">
       <router-link to="/" class="cg-box">
@@ -54,15 +56,17 @@ export default {
 
 <style lang="scss">
 #app {
+  height: 100vh;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
   a {
     text-decoration: none;
   }
-  margin-bottom: 55px;
   .line {
     height: 10px;
     background-color: #f5f5f5;
@@ -75,16 +79,20 @@ export default {
     width: 100%;
     height: 100px;
   }
-  
-  
-  
+
+  .content {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
   .cg-flxed {
-    position: fixed;
-    height: 45px;
-    left: 0;
-    bottom: 0;
+    // position: fixed;
+    height: 3rem;
+    // left: 0;
+    // bottom: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: #fafafa;
     display: flex;
     justify-content: space-around;
     .cg-box {
@@ -97,7 +105,7 @@ export default {
         // height: 30px;
         display: block;
         position: relative;
-        color:#000;
+        color: #000;
         // font-size: 30px;
         .span-ball {
           position: absolute;
