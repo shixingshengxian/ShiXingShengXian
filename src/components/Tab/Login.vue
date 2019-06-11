@@ -3,7 +3,7 @@
     <div class="input-item">
       <div class="input-item-list username">
         <span class="icon-username"></span>
-        <input type="text" placeholder="请输入您的用户名" >
+        <input type="text" placeholder="请输入您的用户名" v-model="login.username" @keyup="uname">
         <i class="close" style="display: none;"></i>
       </div>
       <div class="input-item-list password">
@@ -32,11 +32,21 @@
   </div>
 </template>
 <script>
+// import Vue from 'vue';
+// var vm = new Vue({
+//   el:'.warp',
+//   data:{
+//     username:this.username
+//   }
+// });
 export default {
   data(){
     return{
       register :{
         url:'register'
+      },
+      login:{
+        username:''
       }
     }
   },
@@ -45,11 +55,13 @@ export default {
       this.$router.push({
         name:this.register.url
       })
+    },
+    uname(){
+      
     }
   }
 };
 </script>
-
 <style lang="scss" scoped>
 div,
 span,

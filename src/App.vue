@@ -64,9 +64,6 @@ export default {
   padding: 0;
   margin: 0;
 }
-html{
- font-size: 30.1932px;
-}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

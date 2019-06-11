@@ -27,11 +27,6 @@ export default new Router({
       component:()=>import('./components/Tab/Mine.vue')
     },
     {
-      path: '/eat',
-      name: 'eat',
-      component:()=>import('./components/Tab/Eat.vue')
-    },
-    {
       path: '/login',
       name: 'login',
       component:()=>import('./components/Tab/Login.vue')

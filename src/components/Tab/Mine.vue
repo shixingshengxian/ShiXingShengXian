@@ -184,15 +184,16 @@ footer {
 }
 .my {
   overflow: hidden;
-  margin-bottom: 1.8rem;
+  margin-bottom: 28.8px;
   position: relative;
   background: #f4f4f4;
   color: #000;
+  // font-size: 32px;
   font-family: "Avenir", "PingFang SC", "\5FAE\8F6F\96C5\9ED1";
 }
 .headerNav .navBar {
   width: 100%;
-  height: 1.44rem;
+  height: 1.44em;
   position: fixed;
   left: 0;
   top: 0;
@@ -201,54 +202,54 @@ footer {
 }
 .headerNav .goBack {
   display: inline-block;
-  width: 0.25rem;
-  height: 0.48rem;
+  width: 0.25em;
+  height: 0.48em;
   position: absolute;
-  left: 0.45rem;
-  top: 0.48rem;
+  left: 0.45em;
+  top: 0.48em;
   background-size: 100% 100%;
 }
 .headerNav .title {
   margin-top: 0;
-  font-size: 0.5rem;
-  line-height: 1.44rem;
+  font-size: 0.5em;
+  line-height: 1.44em;
 }
 .my .header {
   position: relative;
   width: 100%;
-  height: 6.44rem;
+  height: 6.44em;
   background: #2dd282
     url(//img06.yiguoimg.com/d/web/180517/01262/143351/bgimg.jpg) 100% 100%;
   background-size: 100% 100%;
-  padding: 0 0rem 1.2rem 0rem;
+  padding: 0 0em 1.2em 0em;
   box-sizing: border-box;
 }
 .my .header .headerImg {
   position: relative;
   display: inline-block;
-  height: 2.26rem;
-  margin-top: 0.9rem;
-  padding: 0 0.32rem 0 2.85rem;
+  height: 2.26em;
+  margin-top: 0.9em;
+  padding: 0 0.32em 0 2.85em;
   box-sizing: border-box;
 }
 
 .my .loginNot .header .headerImg .imgBorder {
   display: inline-block;
   position: absolute;
-  left: 0.5rem;
+  left: 0.5em;
   top: 0;
-  border: 0.13rem solid rgba(255, 255, 255, 0.5);
-  width: 2.26rem;
-  height: 2.26rem;
+  border: 0.13em solid rgba(255, 255, 255, 0.5);
+  width: 2.26em;
+  height: 2.26em;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.5);
 }
 .my .loginNot .header .headerImg img {
   position: absolute;
   top: 0;
-  left: 0rem;
-  width: 2.26rem;
-  height: 2.26rem;
+  left: 0em;
+  width: 2.26em;
+  height: 2.26em;
   border-radius: 50%;
 }
 a {
@@ -259,21 +260,21 @@ a {
   display: inline-block;
   text-align: left;
   color: #fff;
-  font-size: 0.52rem;
-  width: 10rem;
+  font-size: 0.52em;
+  width: 10em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  line-height: 1.7rem;
-  padding: 0.34rem 0 0 0.8rem;
+  line-height: 1.7em;
+  padding: 0.34em 0 0 0.8em;
 }
 .my .header .setting {
   position: absolute;
-  top: 0.36rem;
-  right: 0.5rem;
+  top: 0.36em;
+  right: 0.5em;
   display: inline-block;
-  width: 0.55rem;
-  height: 0.61rem;
+  width: 0.55em;
+  height: 0.61em;
   background: url(//img07.yiguoimg.com/d/web/180508/01319/184003/setting.png)
     no-repeat;
   background-size: 100% 100%;
@@ -283,9 +284,9 @@ a {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 1.78rem;
+  height: 1.78em;
   background: white;
-  padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+  padding: 0.3em 0.3em 0.3em 0.3em;
   box-sizing: border-box;
 }
 .my .account .list {
@@ -299,11 +300,11 @@ a {
   display: block;
 }
 .my .account .list span.num {
-  font-size: 0.5rem;
+  font-size: 0.5em;
   color: #0e9f4e;
 }
 .my .account .list span.txt {
-  font-size: 0.32rem;
+  font-size: 0.32em;
   color: #333333;
 }
 .my .account .list:last-child {
@@ -325,8 +326,8 @@ a {
   position: relative;
   width: 100%;
   background: #fff;
-  height: 2.7rem;
-  margin: 0.3rem 0;
+  height: 2.7em;
+  margin: 0.3em 0;
 }
 .my .listTab ul {
   position: relative;
@@ -347,24 +348,24 @@ li {
 }
 .my .listTab ul li a {
   display: inline-block;
-  font-size: 0.36rem;
+  font-size: 0.4em;
   color: #333;
   width: 100%;
   height: 100%;
   text-align: center;
-  padding-top: 1.73rem;
+  padding-top: 2.5em;
   box-sizing: border-box;
 }
 
 .my .listTab ul li a .icon {
-  width: 0.74rem;
+  width: 1.74em;
   height: auto;
-  margin-left: -0.37rem;
+  margin-left: -0.37em;
 }
 .my .listTab ul li a .icon {
   position: absolute;
-  left: 50%;
-  top: 0.8rem;
+  left: 43%;
+  top: 1.4em;
 }
 .icon {
   display: inline-block;
@@ -381,10 +382,10 @@ img {
 }
 .my .listTab ul li.border-left .pointRight {
   position: absolute;
-  top: 0.05rem;
+  top: 0.05em;
   left: 0;
   display: inline-block;
-  width: 0.16rem;
+  width: 0.16em;
   height: 100%;
   background: url(//img07.yiguoimg.com/d/web/180313/01318/155922/xian.png)
     no-repeat;
@@ -392,31 +393,31 @@ img {
 }
 .my .listTab ul li a {
   display: inline-block;
-  font-size: 0.36rem;
+  font-size: 0.36em;
   color: #333;
   width: 100%;
   height: 100%;
   text-align: center;
-  padding-top: 1.73rem;
+  padding-top: 3.73em;
   box-sizing: border-box;
 }
 .my .listTab ul li:last-child a .icon {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1.8em;
+  height: 1.8em;
   background: url(//img07.yiguoimg.com/d/web/180315/01315/162344/allorder.png)
     no-repeat;
-  margin-left: -0.45rem;
+  margin-left: -0.45em;
   background-size: 100% 100%;
 }
 .my .listTab ul li a .goPage {
   display: inline-block;
-  width: 0.15rem;
-  height: 0.24rem;
+  width: 0.15em;
+  height: 0.24em;
   background: url(//img05.yiguoimg.com/d/web/180313/01318/155922/gopage2.png)
     no-repeat;
-  background-size: 0.15rem 0.24rem;
+  background-size: 0.15em 0.24em;
   vertical-align: middle;
-  margin-left: 0.1rem;
+  margin-left: 0.1em;
 }
 .line-bottom:after {
   content: "";
@@ -435,33 +436,33 @@ img {
     position: relative;
     width: 100%;
     background: #fff;
-    margin-bottom: .3rem;
+    margin-bottom: .3em;
 }
 .my .testList .list {
     position: relative;
     float: left;
     width: 25%;
-    height: 2.7rem;
+    height: 2.7em;
 }
 .my .testList .list a {
     position: relative;
-    font-size: .36rem;
+    font-size: .36em;
     display: inline-block;
     width: 100%;
     height: 100%;
-    padding-top: 1.7rem;
+    padding-top: 3.7em;
     text-align: center;
     box-sizing: border-box;
     color: #333;
 }
 .my .testList .list a .icon {
-    width: 1.08rem;
-    height: 1.08rem;
-    margin-left: -.504rem;
+    width: 2.08em;
+    height: 2.08em;
+    margin-left: -.504em;
     display: inline-block;
     position: absolute;
-    top: .6rem;
-    left: 50%;
+    top: 1.2em;
+    left: 45%;
 }
 .line-bottom:after {
     content: '';

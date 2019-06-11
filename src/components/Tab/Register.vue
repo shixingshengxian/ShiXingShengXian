@@ -2,7 +2,14 @@
   <div class="wrap">
     <div class="input-item">
       <div class="input-item-list">
-        <input type="tel" placeholder="请输入您的手机号" value maxlength="11">
+        <input
+          type="tel"
+          placeholder="请输入您的手机号"
+          value
+          maxlength="11"
+          v-model="iphone"
+          @blur="phone"
+        >
         <span class="btn-captcha">获取验证码</span>
       </div>
       <div class="input-item-list">
@@ -10,11 +17,11 @@
         <i class="close" style="display: none;"></i>
       </div>
       <div class="input-item-list">
-        <input type="password" placeholder="请设定您的密码">
+        <input type="password" placeholder="请设定您的密码" v-model="psw" @blur="mima" value maxlength="10">
         <i class="close" style="display: none;"></i>
       </div>
       <div class="input-item-list">
-        <input type="password" placeholder="请再次输入您的密码">
+        <input type="password" placeholder="请再次输入您的密码" v-model="rpsw"  @blur="rmima" value maxlength="10">
         <i class="close" style="display: none;"></i>
       </div>
     </div>
@@ -33,7 +40,38 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      iphone: "",
+      psw: "",
+      rpsw: ""
+    };
+  },
+  methods: {
+    phone() {
+      var phone = this.iphone;
+      if (!/^1[3456789]\d{9}$/.test(phone)) {
+        alert("手机号码有误，请重填");
+        return false;
+      }
+    },
+    mima() {
+      var psw = this.psw;
+      var reg = /^[a-zA-Z0-9]{4,10}$/;
+      if (reg.test(psw) == false) {
+        alert("密码有误，只支持数字和字母，请重填");
+      }
+    },
+    rmima(){
+      var psw = this.psw;
+      var rpsw = this.rpsw;
+      if(psw !== rpsw){
+        alert('密码不一致，请重填');
+      }
+    }
+  }
+};
 </script>
 <style lang="scss" scoped>
 div,
@@ -119,23 +157,23 @@ a {
   outline: 0;
 }
 .btn-login {
-    margin: 30px 30px 0;
-    text-align: center;
+  margin: 30px 30px 0;
+  text-align: center;
 }
 .btn-login .w60p {
-    width: 60%;
+  width: 60%;
 }
 .btn-login button {
-    display: inline-block;
-    width: 45%;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
+  display: inline-block;
+  width: 45%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
 }
 .btn_green {
-    color: #fff;
-    background: #008842;
+  color: #fff;
+  background: #008842;
 }
 </style>
 
