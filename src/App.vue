@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-   
-      <transition>
-        <router-view></router-view>
-      </transition>
-   
+    <transition>
+      <router-view></router-view>
+    </transition>
 
     <div class="cg-flxed">
       <router-link to="/" class="cg-box">
@@ -68,15 +66,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-bottom: 55px;
   a {
     text-decoration: none;
   }
-  margin-bottom: 55px;
   .line {
     height: 10px;
     background-color: #f5f5f5;
   }
-  
+
   .myself {
     background-color: #ccc;
     width: 100%;
