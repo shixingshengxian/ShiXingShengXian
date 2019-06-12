@@ -1,17 +1,17 @@
 <template>
   <div class="cg-longdiv">
     <ul class="cg-longul">
-      <li class="cg-longli">
-        <img src="http://picpro-sz.34580.com/sh/ImageUrl/507401/160.jpeg" alt>
-        <p class="cg-longtitle">世界上最最最最好吃</p>
+      <li class="cg-longli" v-for="(item) in datalist" :key="item.id">
+        <img :src="item.img" alt>
+        <p class="cg-longtitle">{{item.title}}</p>
         <div class="cg-longfullegg">
-          <span>满50-30</span>
+          <span>{{item.active}}</span>
         </div>
 
         <div class="cg-longprice" style="color: rgb(255, 56, 52);">
           <div>
-            <div>¥17.90</div>
-            <div class="cg-longunit">盒</div>
+            <div>¥{{item.price}}</div>
+            <div class="cg-longunit">{{item.priceunit}}</div>
           </div>
           <div class="cg-longcart iconfont">&#xe89f;</div>
         </div>
@@ -21,15 +21,25 @@
 </template>
 
 <script>
+import Axios from "axios";
 export default {
   data () {
     return {
-      
+      datalist:[]
+      ,datalistimg:[],
     }
+  },
+  mounted() {
+    this.getdatalist();
   },
   methods: {
     getdatalist(){
-      
+       Axios.get('https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123').then(data=>{
+         console.log(data.data);
+         this.datalist=[...this.datalist,...data.data]
+         console.log(this.datalist);
+          
+       })
     }
   },
 };

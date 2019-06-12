@@ -53,7 +53,7 @@
 <script>
 import homeicon from "./HomeIcon.vue";
 import swipestop from "../AllCommon/SwipeStop.vue";
-import homelist from "../Home/Homelist.vue";
+import homelist from "../Home/HomeList.vue";
 export default {
   components: {
     homeicon,

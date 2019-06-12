@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var img = ["http://picpro-sz.34580.com/sh/ImageUrl/549850/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549855/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/552919/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549818/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549550/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549582/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549578/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549859/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/545243/500.jpeg",
+            "http://picpro-sz.34580.com/sh/ImageUrl/549588/500.jpeg"
+        ]
+
+        var data = [{
+                "ProductId": 114076,
+                "ProductVariantId": 114076,
+                "ProductName": "空心菜",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 500,
+                "PvStandard": "500g/份",
+                "PictureId": 131392,
+                "UnitPeriodMoney": 2.99,
+                "PeriodMoney": 2.99,
+                "DefaultMoney": 3.58,
+                "PriceName": "特价",
+                "MaxUnitPeriodMoney": 3.58,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 114017,
+                "ProductVariantId": 114017,
+                "ProductName": "西兰花",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 450,
+                "PvStandard": "450g/份",
+                "PictureId": 549923,
+                "UnitPeriodMoney": 3.94,
+                "PeriodMoney": 4.38,
+                "DefaultMoney": 5.18,
+                "PriceName": "食行价",
+                "MaxUnitPeriodMoney": 3.94,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 111231,
+                "ProductVariantId": 111231,
+                "ProductName": "甘蓝包菜",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 800,
+                "PvStandard": "800g/份",
+                "PictureId": 549571,
+                "UnitPeriodMoney": 2.56,
+                "PeriodMoney": 1.6,
+                "DefaultMoney": 1.9,
+                "PriceName": "食行价",
+                "MaxUnitPeriodMoney": 2.56,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 113647,
+                "ProductVariantId": 113647,
+                "ProductName": "芥兰（上海）",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 700,
+                "PvStandard": "700g/份",
+                "PictureId": 549818,
+                "UnitPeriodMoney": 4.18,
+                "PeriodMoney": 2.99,
+                "DefaultMoney": 4.5,
+                "PriceName": "特价",
+                "MaxUnitPeriodMoney": 6.3,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 109652,
+                "ProductVariantId": 109652,
+                "ProductName": "老相食老家内脂豆腐350g/盒",
+                "Standard": true,
+                "Unit": "盒",
+                "Weight": 350,
+                "PvStandard": "350g/盒",
+                "PictureId": 127746,
+                "UnitPeriodMoney": 0.99,
+                "PeriodMoney": 0.99,
+                "DefaultMoney": 1.5,
+                "PriceName": "特价",
+                "MaxUnitPeriodMoney": 1.5,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 120677,
+                "ProductVariantId": 120677,
+                "ProductName": "苏北蒜苔",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 500,
+                "PvStandard": "500g/份",
+                "PictureId": 547593,
+                "UnitPeriodMoney": 2.99,
+                "PeriodMoney": 2.99,
+                "DefaultMoney": 3.99,
+                "PriceName": "特价",
+                "MaxUnitPeriodMoney": 3.99,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 113990,
+                "ProductVariantId": 113990,
+                "ProductName": "西葫芦（寿光）",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 400,
+                "PvStandard": "400g/份",
+                "PictureId": 549915,
+                "UnitPeriodMoney": 1.26,
+                "PeriodMoney": 1.58,
+                "DefaultMoney": 2.6,
+                "PriceName": "食行价",
+                "MaxUnitPeriodMoney": 1.26,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 116708,
+                "ProductVariantId": 116708,
+                "ProductName": "光明健能梨枇杷风味发酵乳250g",
+                "Standard": true,
+                "Unit": "瓶",
+                "Weight": 1,
+                "PvStandard": "250g/瓶",
+                "PictureId": 512330,
+                "UnitPeriodMoney": 8.5,
+                "PeriodMoney": 8.5,
+                "DefaultMoney": 8.5,
+                "PriceName": "食行价",
+                "MaxUnitPeriodMoney": 8.5,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 114009,
+                "ProductVariantId": 114009,
+                "ProductName": "新茭白（浙江）",
+                "Standard": false,
+                "Unit": "份",
+                "Weight": 400,
+                "PvStandard": "400g/份",
+                "PictureId": 136967,
+                "UnitPeriodMoney": 3.12,
+                "PeriodMoney": 3.9,
+                "DefaultMoney": 3.99,
+                "PriceName": "特价",
+                "MaxUnitPeriodMoney": 3.19,
+                "MaxMark": false
+            },
+            {
+                "ProductId": 122227,
+                "ProductVariantId": 122227,
+                "ProductName": "本地鲜百合250g/份",
+                "Standard": true,
+                "Unit": "份",
+                "Weight": 250,
+                "PvStandard": "250g/份",
+                "PictureId": 558974,
+                "UnitPeriodMoney": 9.9,
+                "PeriodMoney": 9.9,
+                "DefaultMoney": 10.9,
+                "PriceName": "特价",
+                "MaxUnitPeriodMoney": 10.9,
+                "MaxMark": false
+            }
+        ]
+
+
+
+
+        data.forEach((item, index) => {
+            // console.log(item);
+            item.src = img[index]
+
+
+        })
+        // console.log(JSON.stringify(data));
+
+
+
+
+        data2 = [{
+            "name": "222"
+        }, {
+            "name": "333"
+        }, {
+            "name": "444"
+        }]
+        // 给原有的data数据添加一个新的属性
+        data2.forEach((item, index) => {
+            item.src = img[index]
+            console.log(data2);
+
+
+        })
+        console.log(JSON.stringify(data2));
+    </script>
+</body>
+
+</html>
