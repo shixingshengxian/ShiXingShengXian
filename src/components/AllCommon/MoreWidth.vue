@@ -21,10 +21,24 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data () {
+    return {
+      
+    }
+  },
+  methods: {
+    getdatalist(){
+      
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.cg-longdiv::-webkit-scrollbar {
+  display: none;
+}
 .cg-longdiv {
   width: 100%;
   overflow-x: auto;
@@ -50,7 +64,6 @@ export default {};
         font-size: 12px;
       }
       .cg-longfullegg {
-
         span {
           text-overflow: ellipsis;
           padding: 1px 0.2rem;
