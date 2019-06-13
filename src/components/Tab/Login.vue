@@ -3,7 +3,7 @@
     <div class="input-item">
       <div class="input-item-list username">
         <span class="icon-username"></span>
-        <input type="text" placeholder="请输入您的用户名" v-model="login.username" @keyup="uname">
+        <input type="text" placeholder="请输入您的用户名" v-model="login.username">
         <i class="close" style="display: none;"></i>
       </div>
       <div class="input-item-list password">
@@ -23,12 +23,15 @@
       <span class="retrieve_password">
         <a href="javascript:;">忘记密码?</a>
       </span>
+      <div @click="tz" class="r">点我跳转到路人模式</div>
     </div>
     <div class="btn-login clearfix">
       <button type="button" class="btn_green myleft">登录</button>
       <button type="button" @click="zhuce()" class="btn_white myright">立即注册</button>
     </div>
-    <div class="bottomcopyright"><em class=" icon yiguo_logo"></em></div>
+    <div class="bottomcopyright">
+      <em class="icon yiguo_logo"></em>
+    </div>
   </div>
 </template>
 <script>
@@ -40,24 +43,24 @@
 //   }
 // });
 export default {
-  data(){
-    return{
-      register :{
-        url:'register'
+  data() {
+    return {
+      register: {
+        url: "register"
       },
-      login:{
-        username:''
+      login: {
+        username: ""
       }
-    }
+    };
   },
-  methods:{
-    zhuce(){
+  methods: {
+    zhuce() {
       this.$router.push({
-        name:this.register.url
-      })
+        name: this.register.url
+      });
     },
-    uname(){
-      
+    tz() {
+      this.$router.push({ name: "home" });
     }
   }
 };
@@ -73,6 +76,9 @@ footer {
 * {
   padding: 0;
   margin: 0;
+}
+.wrap {
+  padding: 80px 10px 0 10px;
 }
 .input-item {
   border: 1px solid #d9dfd5;
@@ -144,6 +150,14 @@ img {
 }
 .login-option {
   margin: 15px 30px 0 20px;
+  .r {
+    float: right;
+    border: 1px solid #000;
+    display: block;background-color: #000;
+    color: #fff;
+    height: 20px;
+    border-radius: 5px;
+  }
 }
 .retrieve_password {
   float: left;
@@ -162,55 +176,55 @@ img {
   visibility: hidden;
 }
 .btn-login {
-    margin: 30px 30px 0;
-    text-align: center;
+  margin: 30px 30px 0;
+  text-align: center;
 }
 .btn-login button {
-    display: inline-block;
-    width: 45%;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
+  display: inline-block;
+  width: 45%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
 }
 .btn_green {
-    color: #fff;
-    background: #008842;
+  color: #fff;
+  background: #008842;
 }
 .myleft {
-    float: left;
+  float: left;
 }
 .btn-login .btn_white {
-    border: 1px solid #008842;
-    color: #008842;
-    background: #fff;
+  border: 1px solid #008842;
+  color: #008842;
+  background: #fff;
 }
 .btn-login button {
-    display: inline-block;
-    width: 45%;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
+  display: inline-block;
+  width: 45%;
+  height: 40px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
 }
 .myright {
-    float: right;
+  float: right;
 }
 .bottomcopyright {
-    width: 100%;
-    text-align: center;
-    bottom: 15px;
-    left: 0;
-    padding: 10px;
-    position: absolute;
-    box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  bottom: 15px;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  box-sizing: border-box;
 }
 .yiguo_logo {
-    width: 104px;
-    height: 34px;
-    background-image: url(//img02.yiguo.com/e/web/150924/00982/140710/yiguo_logo.png);
-    background-size: 100% 100%;
-    margin: 0 auto;
-    display: block;
+  width: 104px;
+  height: 34px;
+  background-image: url(//img02.yiguo.com/e/web/150924/00982/140710/yiguo_logo.png);
+  background-size: 100% 100%;
+  margin: 0 auto;
+  display: block;
 }
 </style>

@@ -84,6 +84,7 @@ footer {
 .wrap {
   font-size: 12px;
   color: #000;
+   padding:80px 10px 0 10px ;
   font-family: "Avenir", "PingFang SC", "\5FAE\8F6F\96C5\9ED1";
 }
 .input-item {

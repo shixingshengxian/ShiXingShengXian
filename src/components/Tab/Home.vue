@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <headers></headers>
+    <!-- <headers></headers> -->
     <swipe></swipe>
     <homecontent></homecontent>
     <homelike></homelike>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import headers from "../AllCommon/Header.vue";
+// import headers from "../AllCommon/Header.vue";
 import swipe from "../AllCommon/Swipe.vue";
 import homecontent from "../Home/HomeContent.vue";
 import homelike from "../Home/HomeLike.vue";
@@ -19,17 +19,16 @@ export default {
     };
   },
   components: {
-    headers,
+    // headers,
     swipe,
     homecontent,
     homelike
   },
+  
  
 };
 </script>
 
 <style lang="scss" scoped>
-.home {
-  padding-top: 40px;
-}
+
 </style>

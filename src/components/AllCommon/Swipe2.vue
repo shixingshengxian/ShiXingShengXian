@@ -1,7 +1,7 @@
 <template>
   <div class="swipe">
     <mt-swipe :auto="4000">
-      <mt-swipe-item><img src="" alt="">1</mt-swipe-item>
+      <mt-swipe-item><img :src="datalist.img" alt="">1</mt-swipe-item>
       </mt-swipe>
   </div>
 </template>
@@ -9,7 +9,14 @@
 
 <script>
 
-export default {};
+export default {
+  data() {
+    return {
+      
+      }
+  },
+  props: ["datalist"]
+};
 </script>
 
 
@@ -17,10 +24,11 @@ export default {};
 <style lang="scss" scoped>
 .swipe{
   padding: 0 10px;
-    height: 170px;
-    overflow: hidden;
+    // height: 250px;
+    // overflow: hidden;
     img{
-        width: 100%;
+        width: 100%;height: 100%;
+        display: block;
         border-radius: 5px;
     }
 }

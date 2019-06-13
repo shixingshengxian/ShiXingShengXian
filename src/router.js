@@ -10,7 +10,8 @@ export default new Router({
     {
       path: '/',
       name: 'ho',
-      component:()=>import('./components/Tab/Home.vue')
+      redirect:'/home',
+      // component:()=>import('./components/Tab/Home.vue')
     },  {
       path: '/home',
       name: 'home',

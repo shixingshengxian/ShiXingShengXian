@@ -1,126 +1,160 @@
 <template>
   <div class="goodsdetail">
-    <goodsheader class="goodsheader"></goodsheader>
-    <swipe class="swipe"></swipe>
+    <!-- <goodsheader class="goodsheader"></goodsheader> -->
+    <div class="goodsdetail-box">
+      <swipe class="swipe" :datalist="datalist"></swipe>
 
-    <div class="goodsinfo">
-      <div class="title">1</div>
-      <div class="price">
-        <p class="nowprice">1</p>
-        <div class="nowcolor">限时抢购</div>
-      </div>
-      <div class="oprice">
-        <del class="oldprice">1</del>
-        <div class="sell">已售</div>
-      </div>
-      <div class="b-title">
-        <div class>1</div>
-        <i class="iconfont">&#xe8a2;</i>
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="product-other">
-      <div class="activity">
-        <span class="tag">促销</span>
-        <div class="activity-container">
-          <div>
-            <div class="activity-item">
-              <span class="type-name">换购</span>
-              <span class="description">【蔬菜豆菇】满3件可换购3件</span>
-            </div>
-          </div>
-          <div>
-            <div class="activity-item">
-              <span class="type-name">换购</span>
-              <span class="description">【全场】购物满49元可换购1件</span>
-            </div>
-          </div>
+      <div class="goodsinfo">
+        <div class="title">{{datalist.title}}</div>
+        <div class="price">
+          <big class="nowprice">￥{{datalist.price}}{{datalist.priceunit}}</big>
+          <div class="nowcolor">限时抢购</div>
         </div>
-        <div class="more">
+        <div class="oprice">
+          <del class="oldprice">￥{{~~datalist.price+2}}{{datalist.priceunit}}</del>
+          <div class="sell">已售{{datalist.pid}}</div>
+        </div>
+        <div class="b-title">
+          <div class>真正的优惠，你值得拥有</div>
           <i class="iconfont">&#xe8a2;</i>
         </div>
       </div>
-      <div class="service">
-        <div class="tag">服务</div>
-        <div class="service-info">
-          <div class="list">
+      <div class="line"></div>
+      <div class="product-other">
+        <div class="activity">
+          <span class="tag">促销</span>
+          <div class="activity-container">
             <div>
-              <!---->
-              轻松退
+              <div class="activity-item">
+                <span class="type-name">换购</span>
+                <span class="description">【{{datalist.title}}】满3件可换购3件</span>
+              </div>
             </div>
             <div>
-              <span>&nbsp;·</span> 站点自提
-            </div>
-            <div>
-              <span>&nbsp;·</span> 全程冷链
-            </div>
-            <div>
-              <span>&nbsp;·</span> 食材质检
-            </div>
-            <div>
-              <span>&nbsp;·</span> 全场免运费
+              <div class="activity-item">
+                <span class="type-name">换购</span>
+                <span class="description">【全场】购物满49元可换购1件</span>
+              </div>
             </div>
           </div>
-          <!---->
+          <div class="more">
+            <i class="iconfont">&#xe8a2;</i>
+          </div>
         </div>
-        <div class="more">
-          <i class="iconfont">&#xe8a2;</i>
+        <div class="service">
+          <div class="tag">服务</div>
+          <div class="service-info">
+            <div class="list">
+              <div>
+                <!---->
+                轻松退
+              </div>
+              <div>
+                <span>&nbsp;·</span> 站点自提
+              </div>
+              <div>
+                <span>&nbsp;·</span> 全程冷链
+              </div>
+              <div>
+                <span>&nbsp;·</span> 食材质检
+              </div>
+              <div>
+                <span>&nbsp;·</span> 全场免运费
+              </div>
+            </div>
+            <!---->
+          </div>
+          <div class="more">
+            <i class="iconfont">&#xe8a2;</i>
+          </div>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="message">
+        <div class="msg-t">
+          <span class="l">商品评价</span>
+          <span class="r">
+            <p>好评99.8%</p>
+            <i class="iconfont">&#xe8a2;</i>
+          </span>
+        </div>
+
+        <div class="msg-b">
+          <div class="li-icon">
+            <img src alt>
+          </div>
+          <div class="li-text">
+            <P>一位头像都没有的小白</P>
+            <P>东西挺好次的,商家也挺不错的，价格公道，下次还来，凑够十五字</P>
+          </div>
         </div>
       </div>
     </div>
-    <div class="line"></div>
-    <div class="message">
-      <div class="msg-t">
-        <span class="l">标题</span>
-        <span class="r">
-          <p>好评99.8%</p>
-          <i class="iconfont">&#xe8a2;</i>
-        </span>
-      </div>
-
-      <div class="msg-b">
-        <div class="li-icon">
-          <img src alt>
-        </div>
-        <div class="li-text">
-          <P>牧师</P>
-          <P>ssss</P>
-        </div>
-      </div>
+    <div class="shopcart">
+      <div class="gotobuy">立即购买</div>
+      <div class="gotocart">加入购物车</div>
     </div>
-
-    <homelike :bgcflag="bgcflag"></homelike>
+    <!-- <homelike :bgcflag="bgcflag"></homelike> -->
   </div>
 </template>
 
 
 <script>
-import goodsheader from "../AllCommon/Header.vue";
+// import goodsheader from "../AllCommon/Header.vue";
+import Axios from "axios";
 import swipe from "../AllCommon/Swipe2.vue";
-import homelike from "../Home/HomeLike.vue";
+// import homelike from "../Home/HomeLike.vue";
 export default {
   data() {
     return {
-      bgcflag: true
+      bgcflag: true,
+      datalist: [],
+      id: this.$route.params.id
     };
   },
   components: {
-    goodsheader,
+    // goodsheader,
     swipe,
-    homelike
+    // homelike
+  },
+  created() {},
+  mounted() {
+    this.getdatalist();
+  },
+  methods: {
+    getdatalist() {
+      Axios.get(
+        "https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123"
+      ).then(data => {
+        // this.datalist = [...this.datalist, ...data.data];
+        let arr = data.data;
+        for (var item of arr) {
+          if (item.pid == this.id) {
+            this.datalist = item;
+            // console.log(item);
+          }
+        }
+      });
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .goodsdetail {
-  padding-top: 2.5rem;
+  // padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  .goodsdetail-box {
+    flex: 1;
+  }
   .goodsheader {
-    background: linear-gradient(90deg, #40b2eb, #66ccff);
+    height: 40px;
+    // background: linear-gradient(90deg, #40b2eb, #66ccff);
   }
   .swipe {
-    height: 12.5rem;
-    background-color: #000;
+    height: 250px;
+    // background-color: #000;
   }
   .goodsinfo {
     padding: 0.625rem;
@@ -135,6 +169,9 @@ export default {
       display: flex;
       justify-content: left;
       align-items: center;
+      .nowprice {
+        color: red;
+      }
       .nowcolor {
         border: 0.0625rem solid #cccccc;
         text-align: center;
@@ -150,12 +187,18 @@ export default {
       align-items: center;
       display: flex;
       justify-content: space-between;
+      .sell {
+        font-size: 14px;
+      }
     }
     .b-title {
       padding-top: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      div {
+        font-size: 12px;
+      }
     }
   }
 
@@ -186,6 +229,7 @@ export default {
         flex: 1;
         overflow: hidden;
         .activity-item {
+          text-align: left;
           width: 100%;
           overflow: hidden;
           font-size: 0.875rem;
@@ -271,6 +315,9 @@ export default {
         display: flex;
         justify-content: right;
         align-items: center;
+        p {
+          color: red;
+        }
       }
     }
     .msg-b {
@@ -297,10 +344,34 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        p {
+          font-size: 12px;
+        }
         p:nth-child(1) {
+          font-size: 14px;
           font-weight: bold;
         }
       }
+    }
+  }
+  .shopcart {
+    display: flex;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    div {
+      border: 1px solid #fff;
+      color:#fff;
+      width: 120px;
+      font-size: 14px;
+      height: 30px;line-height: 30px;
+      border-radius: 20px;
+    }
+    .gotobuy {
+       background: linear-gradient(90deg, #40b2eb, #66ccff);
+    }
+    .gotocart {
+      background: linear-gradient(90deg, #ff6346, #ff3f57);
     }
   }
 }

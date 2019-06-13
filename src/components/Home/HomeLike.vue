@@ -38,9 +38,9 @@ export default {
       Axios.get(
         "https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123"
       ).then(data => {
-        console.log(data.data);
+        // console.log(data.data);
         this.datalist = [...this.datalist, ...data.data];
-        console.log(this.datalist);
+        // console.log(this.datalist);
       });
     }
   }

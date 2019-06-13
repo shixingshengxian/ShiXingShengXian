@@ -1,7 +1,7 @@
 <template>
   <div class="goodslist">
-    <goodsheader class="goodsheader"></goodsheader>
-    <router-link to="/goodslist/goodsdetail" class="products" v-for="item in datalist" :key="item.pid">
+    <!-- <goodsheader class="goodsheader"></goodsheader> -->
+    <div @click="toshop(item.pid)" class="products" v-for="item in datalist" :key="item.pid">
       <div class="l">
         <img :src="item.img" alt>
       </div>
@@ -15,14 +15,14 @@
           <div class="gobuy">马上购</div>
         </div>
       </div>
-    </router-link>
+    </div>
   </div>
 </template>
 
 
 <script>
 import Axios from "axios";
-import goodsheader from "../AllCommon/Header.vue";
+// import goodsheader from "../AllCommon/Header.vue";
 export default {
   data() {
     return {
@@ -33,7 +33,7 @@ export default {
     this.getdatalist();
   },
   components: {
-    goodsheader
+    // goodsheader
   },
   methods: {
     getdatalist() {
@@ -42,6 +42,11 @@ export default {
       ).then(data => {
         this.datalist = [...this.datalist, ...data.data];
       });
+    },
+    toshop(id){
+        // console.log(id);
+        // this.$router.push({path:'/goodslist/goodsdetail/'+id})
+        this.$router.push({name:"goodsdetail",params:{id}})
     }
   }
 };
@@ -52,7 +57,7 @@ export default {
   .goodsheader {
     background: linear-gradient(90deg, #ff6346, #ff3f57);
   }
-  padding-top: 50px;
+  // padding-top: 50px;
   .products {
     padding: 10px;
     margin-bottom: 10px;
