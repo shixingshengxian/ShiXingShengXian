@@ -1,6 +1,6 @@
 <template>
   <div class="homelike">
-    <div class="title">
+    <div :class="{title:true,bgc:bgcflag}">
       <i class="iconfont">&#xe872;</i> 猜你喜欢
     </div>
     <!-- <div class="products">
@@ -11,11 +11,11 @@
       </div>
     </div>-->
     <ul class="products">
-      <li v-for="item in datalist" :key="item.pid" class="inner">
+      <router-link to="/goodslist" tag="li" v-for="item in datalist" :key="item.pid" class="inner">
         <img v-lazy="item.img">
         <div class="title">{{item.title}}</div>
         <div class="price">{{item.priceandunit}}</div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -29,6 +29,7 @@ export default {
       datalistimg: []
     };
   },
+  props: ["bgcflag"],
   mounted() {
     this.getdatalist();
   },
@@ -50,12 +51,20 @@ export default {
   .title {
     height: 30px;
     width: 100%;
+    line-height: 30px;
+     background-color: #eee;
     i {
       color: red;
       font-size: 18px;
     }
   }
-
+  .bgc {
+    background-color: #eee;
+    i {
+      color: red;
+      font-size: 18px;
+    }
+  }
   .products {
     padding: 0 10px;
     display: flex;
@@ -79,6 +88,7 @@ export default {
         overflow: hidden;
         white-space: nowrap;
         margin: 0 auto;
+        background-color: #fff;
       }
       .price {
         color: red;

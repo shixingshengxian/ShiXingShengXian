@@ -40,5 +40,13 @@ export default new Router({
       name: 'register',
       component:()=>import('./components/Tab/Register.vue')
     },
+    {
+      path: '/goodslist',
+      name: 'goodslist',
+      component:()=>import('./components/GoodsList/GoodsList.vue'),
+      
+    },
+    {path:'/goodslist/goodsdetail',name:'goodsdetail', component:()=>import('./components/GoodsList/GoodsDetail.vue')}
+   
   ]
 })

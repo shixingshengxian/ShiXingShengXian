@@ -14,19 +14,22 @@ import homecontent from "../Home/HomeContent.vue";
 import homelike from "../Home/HomeLike.vue";
 export default {
   data() {
-    return {};
+    return {
+     
+    };
   },
   components: {
     headers,
     swipe,
     homecontent,
     homelike
-  }
+  },
+ 
 };
 </script>
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 50px;
+  padding-top: 40px;
 }
 </style>
