@@ -91,8 +91,8 @@
       </div>
     </div>
     <div class="shopcart">
-      <div class="gotobuy">立即购买</div>
-      <div class="gotocart">加入购物车</div>
+      <div class="gotobuy" @click="buy">立即购买</div>
+      <div class="gotocart" @click="incart">加入购物车</div>
     </div>
     <!-- <homelike :bgcflag="bgcflag"></homelike> -->
   </div>
@@ -104,6 +104,7 @@
 import Axios from "axios";
 import swipe from "../AllCommon/Swipe2.vue";
 // import homelike from "../Home/HomeLike.vue";
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {
@@ -114,13 +115,14 @@ export default {
   },
   components: {
     // goodsheader,
-    swipe,
+    swipe
     // homelike
   },
-  created() {},
-  mounted() {
+  created() {
     this.getdatalist();
   },
+  mounted() {},
+
   methods: {
     getdatalist() {
       Axios.get(
@@ -135,6 +137,28 @@ export default {
           }
         }
       });
+    },
+    buy() {
+      this.$router.push({
+        name: "/shopcart"
+      });
+    },
+    incart() {
+      var goods = {
+        id: this.id,
+        title: this.datalist.title,
+        img: this.datalist.img,
+        num: 1,
+        price: this.datalist.price,
+        info: this.datalist.priceunit,
+        selected: true
+      };
+      this.$store.commit("addtocart", goods);
+      Toast({
+        message: "成功加入购物车",
+        position: "bottom",
+        duration: 1000
+      });
     }
   }
 };
@@ -147,6 +171,8 @@ export default {
   flex-direction: column;
   .goodsdetail-box {
     flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .goodsheader {
     height: 40px;
@@ -357,18 +383,21 @@ export default {
   .shopcart {
     display: flex;
     height: 40px;
-    justify-content: space-around;
+    padding: 5px 0;
+    border-top: 1px solid #ececec;
+    justify-content: space-evenly;
     align-items: center;
     div {
       border: 1px solid #fff;
-      color:#fff;
+      color: #fff;
       width: 120px;
       font-size: 14px;
-      height: 30px;line-height: 30px;
+      height: 30px;
+      line-height: 30px;
       border-radius: 20px;
     }
     .gotobuy {
-       background: linear-gradient(90deg, #40b2eb, #66ccff);
+      background: linear-gradient(90deg, #40b2eb, #66ccff);
     }
     .gotocart {
       background: linear-gradient(90deg, #ff6346, #ff3f57);

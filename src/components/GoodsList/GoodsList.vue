@@ -26,23 +26,23 @@ import Axios from "axios";
 export default {
   data() {
     return {
-      datalist: []
+      datalist: this.$store.state.getdatalist
     };
   },
   created() {
-    this.getdatalist();
+    // this.getdatalist();
   },
   components: {
     // goodsheader
   },
   methods: {
-    getdatalist() {
-      Axios.get(
-        "https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123"
-      ).then(data => {
-        this.datalist = [...this.datalist, ...data.data];
-      });
-    },
+    // getdatalist() {
+    //   Axios.get(
+    //     "https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123"
+    //   ).then(data => {
+    //     this.datalist = [...this.datalist, ...data.data];
+    //   });
+    // },
     toshop(id){
         // console.log(id);
         // this.$router.push({path:'/goodslist/goodsdetail/'+id})
@@ -84,7 +84,7 @@ export default {
         justify-content: space-between;
 
         .price {
-          color: red;
+          color: red !important;
           font-size: 14px;
         }
         .unit {

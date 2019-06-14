@@ -21,28 +21,27 @@
 </template>
 
 <script>
-import Axios from "axios";
 export default {
   data() {
     return {
-      datalist: [],
+      datalist: this.$store.state.getdatalist,
       datalistimg: []
     };
   },
   props: ["bgcflag"],
   mounted() {
-    this.getdatalist();
+    // this.getdatalist();
   },
   methods: {
-    getdatalist() {
-      Axios.get(
-        "https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123"
-      ).then(data => {
-        // console.log(data.data);
-        this.datalist = [...this.datalist, ...data.data];
-        // console.log(this.datalist);
-      });
-    }
+    // getdatalist() {
+    //   Axios.get(
+    //     "https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123"
+    //   ).then(data => {
+    //     // console.log(data.data);
+    //     this.datalist = [...this.datalist, ...data.data];
+    //     // console.log(this.datalist);
+    //   });
+    // }
   }
 };
 </script>

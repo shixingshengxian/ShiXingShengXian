@@ -144,6 +144,16 @@ svg:not(:root) {
     overflow: hidden;
 }
 
+.chk-box{
+    width: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.diy{
+    top: 4px;
+    right: 6px;
+}
 .addition-item {
     margin-left: 2rem;
     padding: 1rem 0;

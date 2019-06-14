@@ -5,14 +5,15 @@ import store from './store'
 import './registerServiceWorker'
 import './css/font.css'
 
-import { Header } from "mint-ui";
-import 'mint-ui/lib/style.css'
-Vue.component(Header.name, Header);
+// import {
+//   Header
+// } from "mint-ui";
+// import 'mint-ui/lib/style.css'
+// Vue.component(Header.name, Header);
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
-
 
 Vue.config.productionTip = false
 

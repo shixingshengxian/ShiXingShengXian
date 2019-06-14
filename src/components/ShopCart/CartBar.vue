@@ -3,26 +3,7 @@
     <div class="cart-bottom">
       <div class="cart-bottom-information">
         <div class="select">
-          <!-- <span class="mn-icon" style="width: 19.2px; height: 19.2px;">
-            <span class="mn-icon-svg" style="width: 19.2px; height: 19.2px;">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 15 16"
-              >
-                <g fill="none" fill-rule="evenodd">
-                  <g transform="translate(-15 -455)">
-                    <g>
-                      <circle cx="22.5" cy="462.9" r="7.5"></circle>
-                      <circle cx="22.5" cy="462.9" r="7" stroke="#C8C7D0"></circle>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </span>
-          </span> -->
           <input type="checkbox">
-
           <span style="margin-left:5px">全选</span>
         </div>
         <div class="information">
@@ -49,7 +30,6 @@
 </template>
 
 <style scoped>
-
 .cart-bottom-wrapper {
   position: fixed;
   bottom: 3rem;

@@ -1,7 +1,7 @@
 <template>
   <div class="cg-longdiv">
     <ul class="cg-longul">
-      <li class="cg-longli" v-for="(item) in datalist" :key="item.id">
+      <router-link to="/goodslist" class="cg-longli" v-for="(item) in datalist" :key="item.id">
         <img :src="item.img" alt>
         <p class="cg-longtitle">{{item.title}}</p>
         <div class="cg-longfullegg">
@@ -15,7 +15,7 @@
           </div>
           <div class="cg-longcart iconfont">&#xe89f;</div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -25,22 +25,24 @@ import Axios from "axios";
 export default {
   data () {
     return {
-      datalist:[]
+      datalist:this.$store.state.getdatalist
       ,datalistimg:[],
     }
   },
   mounted() {
-    this.getdatalist();
+    // this.getdatalist();
   },
   methods: {
-    getdatalist(){
-       Axios.get('https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123').then(data=>{
-        //  console.log(data.data);
-         this.datalist=[...this.datalist,...data.data]
-        //  console.log(this.datalist);
+
+
+    // getdatalist(){
+    //    Axios.get('https://www.easy-mock.com/mock/5cee272db198552aa3fde20d/example/123').then(data=>{
+    //     //  console.log(data.data);
+    //      this.datalist=[...this.datalist,...data.data]
+    //     //  console.log(this.datalist);
           
-       })
-    }
+    //    })
+    // }
   },
 };
 </script>

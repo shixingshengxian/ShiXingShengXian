@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div title="固定在顶部" :class="{'top-fixed':true,'blues':blueflag,'reds':redflag}" v-show="mineshow">
-      <div class="l" v-show="topflag" @click="goback">
+    <div title="固定在顶部" :class="{'top-fixed':true,'blues':blueflag,'reds':redflag}" v-if="mineshow">
+      <div class="l" v-if="topflag" @click="goback">
         <i class="iconfont">&#xe8b5;</i>
         <p>返回</p>
       </div>
@@ -12,32 +12,29 @@
       <router-view class="middle"></router-view>
     </transition>
 
-    <div class="cg-flxed" v-show="bottomflag">
+    <div class="cg-flxed" v-if="bottomflag">
       <router-link to="/home" class="cg-box" tag="p">
         <span class="span-t">
           <i class="span-icon iconfont">&#xe68c;</i>
-          <span class="span-ball"></span>
         </span>
         <span class="span-b">首页</span>
       </router-link>
       <router-link to="/sort" class="cg-box" tag="p">
         <span class="span-t">
           <i class="span-icon iconfont">&#xe6c7;</i>
-          <span class="span-ball"></span>
         </span>
         <span class="span-b">分类</span>
       </router-link>
       <router-link to="/shopcart" class="cg-box" tag="p">
         <span class="span-t">
           <i class="span-icon iconfont">&#xe8e7;</i>
-          <span class="span-ball"></span>
+          <span class="span-ball" v-show="$store.getters.getAllNum">{{$store.getters.getAllNum}}</span>
         </span>
         <span class="span-b">购物车</span>
       </router-link>
       <router-link to="/mine" class="cg-box" tag="p">
         <span class="span-t">
           <i class="span-icon iconfont">&#xe6d2;</i>
-          <span class="span-ball"></span>
         </span>
         <span class="span-b">我的</span>
       </router-link>
@@ -56,7 +53,9 @@ export default {
       mineshow:true,
     };
   },
-
+created() {
+  this.$store.commit('getdatalist');
+},
   methods: {
     goback() {
       this.$router.go(-1);
@@ -120,6 +119,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+    background-color: #fff;
+    p{
+      margin-bottom: 0;
+      color:#000;
+    }
   .router-link-exact-active{
     color:chartreuse;
   }
@@ -155,7 +159,8 @@ export default {
   }
 
   .middle {
-    // display: flex;
+    display: flex;
+    flex-direction: column;
     flex: 1;
     overflow-x: hidden;
     overflow-y: auto;
@@ -186,6 +191,7 @@ export default {
     background-color: #fff;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     .cg-box {
       width: 15%;
       display: flex;
@@ -200,12 +206,20 @@ export default {
         // font-size: 1.875rem;
         .span-ball {
           position: absolute;
-          height: 0.75rem;
-          width: 0.75rem;
-          // background-color: red;
-          border-radius: 50%;
-          top: 0rem;
-          right: 0.625rem;
+          text-align: center;
+         
+         height: 18px;
+        // padding: 3px;
+        border: 1px solid red;
+        border-radius: 4px;
+        background-color: red;
+         line-height: 18px;
+          font-size: 12px;
+          top: -2px;
+          right: 7px;
+          color:#fff;
+          padding:0 3px;
+          font-weight: bold;
         }
       }
       .span-b {
