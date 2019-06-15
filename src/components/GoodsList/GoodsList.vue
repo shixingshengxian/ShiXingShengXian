@@ -1,18 +1,19 @@
 <template>
-  <div class="goodslist">
-    <!-- <goodsheader class="goodsheader"></goodsheader> -->
-    <div @click="toshop(item.pid)" class="products" v-for="item in datalist" :key="item.pid">
-      <div class="l">
-        <img :src="item.img" alt>
-      </div>
-      <div class="m">
-        <p class="title">{{item.title}}</p>
-        <div class="products-b">
-          <div class="msg">
-            <p class="price">￥{{item.price}}</p>
-            <del class="unit">￥{{~~item.price+2}}{{item.priceunit}}</del>
+  <div id="shopslist">
+    <div>
+      <div @click="toshop(item.pid)" class="p-box" v-for="item in datalist" :key="item.pid">
+        <div class="l">
+          <img :src="item.img" alt>
+        </div>
+        <div class="m">
+          <p class="title">{{item.title}}</p>
+          <div class="products-b">
+            <div class="msg">
+              <p class="price">￥{{item.price}}</p>
+              <del class="unit">￥{{~~item.price+2}}{{item.priceunit}}</del>
+            </div>
+            <div class="gobuy">马上购</div>
           </div>
-          <div class="gobuy">马上购</div>
         </div>
       </div>
     </div>
@@ -31,11 +32,10 @@ export default {
   },
   created() {
     // this.getdatalist();
-     this.$store.commit('getDataList')
+    this.$store.commit("getDataList");
   },
   components: {
     // goodsheader
-   
   },
   methods: {
     // getdatalist() {
@@ -45,39 +45,43 @@ export default {
     //     this.datalist = [...this.datalist, ...data.data];
     //   });
     // },
-    toshop(id){
-        // console.log(id);
-        // this.$router.push({path:'/goodslist/goodsdetail/'+id})
-        this.$router.push({name:"goodsdetail",params:{id}})
+    toshop(id) {
+      // console.log(id);
+      // this.$router.push({path:'/goodslist/goodsdetail/'+id})
+      this.$router.push({ name: "goodsdetail", params: { id } });
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.goodslist {
-  .goodsheader {
-    background: linear-gradient(90deg, #ff6346, #ff3f57);
-  }
-  // padding-top: 50px;
-  .products {
-    padding: 10px;
-    margin-bottom: 10px;
+#shopslist {
+  display: flex;
+  flex-direction: column;
+  .p-box {
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
     display: flex;
-    justify-content: left;
-    border-bottom: 1px solid #eee;
+    // justify-content: left;
+    border-bottom: 0.0625rem solid #eee;
+    height: 100px;
+
     .l {
-      width: 90px;
+      width: 5.625rem;
+      height: 5.625rem !important;
       img {
-        width: 100%;
+        display: block;
+        width: 5.625rem !important;
+        height: 5.625rem !important;
       }
     }
     .m {
-      margin-left: 10px;
+      margin-left: 0.625rem;
       display: flex;
       flex: 1;
       flex-direction: column;
       justify-content: space-between;
+      height: 5.625rem;
       .title {
         text-align: left;
       }
@@ -87,19 +91,19 @@ export default {
 
         .price {
           color: red !important;
-          font-size: 14px;
+          font-size: 0.875rem;
         }
         .unit {
-          font-size: 10px;
-          color:#999;
+          font-size: 0.625rem;
+          color: #999;
         }
         .gobuy {
-          border: 1px solid #cccccc;
+          border: 0.0625rem solid #cccccc;
           text-align: center;
           align-items: center;
-          line-height: 35px;
-          width: 75px;
-          border-radius: 25px;
+          line-height: 2.1875rem;
+          width: 4.6875rem;
+          border-radius: 1.5625rem;
           color: #fff;
           background: linear-gradient(90deg, #ff6346, #ff3f57);
         }
