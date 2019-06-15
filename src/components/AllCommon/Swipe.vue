@@ -18,12 +18,12 @@ export default {};
 
 <style lang="scss" scoped>
 .swipe{
-  padding: 0 10px;
-    height: 170px;
+  padding: 0 0.625rem;
+    height: 10.625rem;
     overflow: hidden;
     img{
         width: 100%;
-        border-radius: 5px;
+        border-radius: 0.3125rem;
     }
 }
 </style>

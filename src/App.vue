@@ -5,7 +5,7 @@
         <i class="iconfont">&#xe8b5;</i>
         <p>返回</p>
       </div>
-      <p class="m">食味生鲜</p>
+      <p class="m">食行生鲜</p>
       <i class="iconfont">&#xe893;</i>
     </div>
     <transition>
@@ -28,7 +28,7 @@
       <router-link to="/shopcart" class="cg-box" tag="p">
         <span class="span-t">
           <i class="span-icon iconfont">&#xe8e7;</i>
-          <span class="span-ball" v-show="$store.getters.getAllNum">{{$store.getters.getAllNum}}</span>
+          <span class="span-ball" v-show="$store.getters.checkedNum">{{$store.getters.checkedNum}}</span>
         </span>
         <span class="span-b">购物车</span>
       </router-link>
@@ -54,7 +54,7 @@ export default {
     };
   },
 created() {
-  this.$store.commit('getdatalist');
+  this.$store.commit('getDataList');
 },
   methods: {
     goback() {
@@ -130,19 +130,19 @@ created() {
   a {
     text-decoration: none;
   }
-  // margin-bottom: 55px;
+  // margin-bottom: 3.4375rem;
   display: flex;
   flex-direction: column;
   .top-fixed {
     display: flex;
-    height: 40px;
+    height: 2.5rem;
     background-color: #fff;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 0.625rem;
     .l {
       display: flex;
-      font-size: 14px;
+      font-size: 0.875rem;
       align-items: center;
     }
     .m {
@@ -171,7 +171,7 @@ created() {
     height: 2.5rem;
   }
   .line {
-    height: 10px;
+    height: 0.625rem;
     background-color: #f5f5f5;
   }
 
@@ -182,6 +182,7 @@ created() {
   }
 
   .cg-flxed {
+    border-top: 0.0625rem solid #ececec;
     // position: fixed;
     z-index: 99;
     height: 3.125rem;
@@ -208,17 +209,17 @@ created() {
           position: absolute;
           text-align: center;
          
-         height: 18px;
-        // padding: 3px;
-        border: 1px solid red;
-        border-radius: 4px;
+         height: 1.125rem;
+        // padding: 0.1875rem;
+        border: 0.0625rem solid red;
+        border-radius: 0.25rem;
         background-color: red;
-         line-height: 18px;
-          font-size: 12px;
-          top: -2px;
-          right: 7px;
+         line-height: 1.125rem;
+          font-size: 0.75rem;
+          top: -0.125rem;
+          right: 0.4375rem;
           color:#fff;
-          padding:0 3px;
+          padding:0 0.1875rem;
           font-weight: bold;
         }
       }

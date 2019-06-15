@@ -171,7 +171,7 @@ export default {};
 
 <style lang="scss" scoped>
 .swipestop {
-  height: 140px;
+  height: 8.75rem;
   //   height: 100%;
 
   .mn-carousel-item.home-shortcunicons {
@@ -180,18 +180,18 @@ export default {};
     justify-content: space-between;
     .icon-t,
     .icon-b {
-      padding-top: 10px;
+      padding-top: 0.625rem;
       display: flex;
       // justify-content: space-around;
     }
     .home-shortcunicons-item {
       width: 20%;
       p {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
       img {
-        width: 30px;
-        height: 30px;
+        width: 1.875rem;
+        height: 1.875rem;
       }
     }
   }

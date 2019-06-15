@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .line {
-  height: 10px;
+  height: 0.625rem;
   background-color: #eee;
 }
 .homecontent {

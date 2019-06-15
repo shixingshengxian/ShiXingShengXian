@@ -4,7 +4,7 @@
       <div class="cart-bottom-information">
         <div class="select">
           <input type="checkbox">
-          <span style="margin-left:5px">全选</span>
+          <span style="margin-left:0.3125rem">全选</span>
         </div>
         <div class="information">
           <div style="text-align:left">
@@ -44,7 +44,7 @@
   display: -webkit-flex;
   display: flex;
   background-color: #fff;
-  max-width: 640px;
+  max-width: 40rem;
   margin: 0 auto;
   font-size: 0.875rem;
   padding: 0 1rem;

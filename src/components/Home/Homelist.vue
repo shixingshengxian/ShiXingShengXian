@@ -24,7 +24,7 @@ export default {
 .homelist{
     .home-title{
         display: flex;
-        padding: 0 10px;
+        padding: 0 0.625rem;
         justify-content: space-between;
         div{
             width: 48%;img{

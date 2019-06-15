@@ -29,14 +29,14 @@ export default {
 <style lang="scss" scoped>
 .top-fixed {
   display: flex;
-  height: 40px;
+  height: 2.5rem;
   background-color: #fff;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 0.625rem;
   .l {
     display: flex;
-    font-size: 14px;
+    font-size: 0.875rem;
     align-items: center;
   }
   .m {

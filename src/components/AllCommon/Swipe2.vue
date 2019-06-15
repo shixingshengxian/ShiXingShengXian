@@ -23,13 +23,13 @@ export default {
 
 <style lang="scss" scoped>
 .swipe{
-  padding: 0 10px;
+  padding: 0 0.625rem;
     // height: 250px;
     // overflow: hidden;
     img{
         width: 100%;height: 100%;
         display: block;
-        border-radius: 5px;
+        border-radius: 0.3125rem;
     }
 }
 </style>

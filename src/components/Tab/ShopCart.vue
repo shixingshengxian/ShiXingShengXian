@@ -27,7 +27,13 @@
             <div class="chk-box">
               <div class="mui-input-row mui-checkbox">
                 <label></label>
-                <input name="checkbox1" type="checkbox" :value="g" v-model="check_cart">
+                <input
+                  name="checkbox1"
+                  type="checkbox"
+                  :value="g"
+                  @click="checkGood(g)"
+                  :checked="g.selected"
+                >
               </div>
             </div>
 
@@ -35,10 +41,7 @@
               <div class="addition-item">
                 <div class="image">
                   <div class="mn-image">
-                    <img
-                      :src="g.img"
-                      class="mn-image-source is-active"
-                    >
+                    <img :src="g.img" class="mn-image-source is-active">
                   </div>
                   <!---->
                   <!---->
@@ -65,22 +68,22 @@
                         src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCAyMSAzIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0OC4yICg0NzMyNykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+c3ZnL2Ftb3VudF9yZWR1Y2VfbjwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSLotK3nianovaYt54q25oCBIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNTYyLjAwMDAwMCwgLTE4NTYuMDAwMDAwKSI+CiAgICAgICAgPGcgaWQ9IuaNoui0rSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQuMDAwMDAwLCAxNTI3LjAwMDAwMCkiIGZpbGw9IiMzMzMzMzMiPgogICAgICAgICAgICA8ZyBpZD0i5pWw6YePIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MzguMDAwMDAwLCAzMDkuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICA8ZyBpZD0iYW1vdW50X3JlZHVjZV9uIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgMjAuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgaWQ9IuWHjyIgeD0iMCIgeT0iMCIgd2lkdGg9IjIxIiBoZWlnaHQ9IjMiIHJ4PSIxLjUiPjwvcmVjdD4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+"
                         alt
                         class="min"
-                        @click="sub(g.id)"
+                        @click="subNum(g.id)"
                       >
                       <div class="freshes-counter-box">
                         <input
                           type="number"
                           class="freshes-counter-control"
                           style="font-size: 0.75rem;"
-                          @change="numChange(~~g.num,g.id)"
-                          v-model="g.num"
+                          @change="updataNum(~~g.num,g.id)"
+                          :value="g.num"
                         >
                       </div>
                       <img
                         src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjFweCIgaGVpZ2h0PSIyMXB4IiB2aWV3Qm94PSIwIDAgMjEgMjEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQ4LjIgKDQ3MzI3KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5zdmcvYW1vdW50X2FkZF9uPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9Iui0reeJqei9pi3nirbmgIEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC02ODEuMDAwMDAwLCAtMTg0Ny4wMDAwMDApIj4KICAgICAgICA8ZyBpZD0i5o2i6LStIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNC4wMDAwMDAsIDE1MjcuMDAwMDAwKSIgZmlsbD0iIzMzMzMzMyI+CiAgICAgICAgICAgIDxnIGlkPSLmlbDph48iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUzOC4wMDAwMDAsIDMwOS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJhbW91bnRfYWRkX24iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOS4wMDAwMDAsIDExLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgIDxyZWN0IGlkPSLliqAiIHg9IjAiIHk9IjkiIHdpZHRoPSIyMSIgaGVpZ2h0PSIzIiByeD0iMS41Ij48L3JlY3Q+CiAgICAgICAgICAgICAgICAgICAgPHJlY3QgaWQ9IuWKoCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAuNTAwMDAwLCAxMC41MDAwMDApIHJvdGF0ZSg5MC4wMDAwMDApIHRyYW5zbGF0ZSgtMTAuNTAwMDAwLCAtMTAuNTAwMDAwKSAiIHg9IjAiIHk9IjkiIHdpZHRoPSIyMSIgaGVpZ2h0PSIzIiByeD0iMS41Ij48L3JlY3Q+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg=="
                         alt
                         class="min"
-                        @click="add(g.id)"
+                        @click="addNum(g.id)"
                       >
                     </div>
                   </div>
@@ -120,20 +123,20 @@
                 <input
                   name="checkbox1"
                   type="checkbox"
-                  @click="check_all"
-                  :checked="check_cart.length === cart.length"
+                  @click="allCheck(isAllChecked)"
+                  :checked="isAllChecked"
                 >
               </div>
             </div>
-            <span style="margin-left:-5px; line-height:26px">全选</span>
+            <span style="margin-left:-0.3125rem; line-height:1.625rem">全选</span>
           </div>
           <div class="information" v-show="!edit_card">
             <div style="text-align:left">
               合计:
               <span class="price">
                 ¥
-                <span class="price-int">{{price_int(price_total)}}</span>
-                .{{price_dec(price_total)}}
+                <span class="price-int">{{price_int(checkedPrice)}}</span>
+                .{{price_dec(checkedPrice)}}
               </span>
             </div>
             <div class="information-tip">
@@ -144,8 +147,8 @@
           </div>
         </div>
         <div class="cart-bottom-action">
-          <div class="button is-empty" v-show="!edit_card">去结算({{num_total}})</div>
-          <div class="button is-empty" v-show="edit_card" @click="del">删除</div>
+          <div class="button is-empty" v-show="!edit_card">去结算({{checkedNum}})</div>
+          <div class="button is-empty" v-show="edit_card" @click="delCheck">删除</div>
 
           <!---->
         </div>
@@ -161,6 +164,7 @@
 </template>
 
 <script>
+import {  mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -171,73 +175,30 @@ export default {
     };
   },
   computed: {
-    //勾选数量的函数
-    num_total() {
-      var num = 0;
-      //遍历勾选的数组，然后相加
-      this.check_cart.forEach(function(item) {
-        num += Number(item.num);
-      });
-      return num;
-    },
-    //计算勾选的总价格
-    price_total() {
-      var price = 0;
-      //遍历勾选内容的数组
-      this.check_cart.forEach(function(item) {
-        price += Number(item.price) * Number(item.num);
-      });
-      //返回一个总价格
-      return price;
-    }
+    ...mapGetters([
+      "isAllChecked",
+      "goodsCheckedData",
+      "checkedPrice",
+      "checkedNum"
+    ])
   },
   methods: {
-    add(id) {
-      this.$store.commit("addNum", id);
-    },
-    sub(id) {
-      this.$store.commit("subNum", id);
-    },
-    del() {
-      let arr = [];
-      this.cart.forEach(item => {
-        if (this.check_cart.indexOf(item) >= 0) {
-          // console.log(item);
-        } else {
-          arr.push(item);
-        }
-      });
-      this.cart = arr;
-      this.check_cart = [];
-      this.$store.commit('del',this.cart);
-    },
-    //手动修改数据的时候
-    numChange(num,id) {
-      this.$store.commit('updataNum',{id,num})
-    },
-    //全选的函数
-    check_all() {
-      if (
-        //判断语句，如果不等于就不勾选全选
-        this.check_cart.length >= 0 &&
-        this.check_cart.length != this.cart.length
-      ) {
-        this.check_cart = this.cart;
-      } else if ((this.check_cart.length == this.cart.length)) {
-        this.check_cart = [];
-      } else {
-        this.cart.forEach(item => {
-          this.check_cart.push(item);
-        });
-      }
-    },
+    ...mapActions([
+      "addNum", //增加数量
+      "subNum", //减少数量
+      "updataNum", //减少数量
+      "checkGood", //单选
+      "allCheck", //全选
+      "delCheck" //删除所选
+    ]),
+
     //商品价格的整数截取部分函数
     price_int(price) {
       return parseInt(price);
     },
     //商品价格的小数截取部分函数
     price_dec(price) {
-      var price = Number(price);
+       price = Number(price);
       price = price.toFixed(2);
       var dec = price.split(".");
       return dec[1];
@@ -246,9 +207,7 @@ export default {
     edit_mode() {
       this.edit_card = !this.edit_card;
       this.check_cart = [];
-    }
-
-    //删除的功能
+    },
   }
 };
 </script>
@@ -273,15 +232,15 @@ export default {
   position: fixed;
   bottom: 7rem;
   right: 0.5rem;
-  z-index: 99;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
   font-size: 0.875rem;
   color: #fff;
-  line-height: 44px;
+  line-height: 2.75rem;
   text-align: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 22px;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 1.375rem;
 }
 
 .cart-none {
@@ -332,7 +291,7 @@ export default {
   background-color: #49aa34;
   color: #fff;
   padding: 0 3rem;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   margin-top: 1rem;
 }
 @import "../../assets/ListCard.css";

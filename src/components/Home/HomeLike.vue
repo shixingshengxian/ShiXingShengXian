@@ -48,40 +48,40 @@ export default {
 <style lang="scss" scoped>
 .homelike {
   .title {
-    height: 30px;
+    height: 1.875rem;
     width: 100%;
-    line-height: 30px;
+    line-height: 1.875rem;
      background-color: #eee;
     i {
       color: red;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
   .bgc {
     background-color: #eee;
     i {
       color: red;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
   .products {
-    padding: 0 10px;
+    padding: 0 0.625rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     .inner {
       width: 48%;
-      //   height: 200px;
-      margin-bottom: 10px;
+      //   height: 12.5rem;
+      margin-bottom: 0.625rem;
       img[lazy="loading"] {
         width: 100%;
-        // height: 300px;
+        // height: 18.75rem;
         margin: auto;
       }
       .title {
-        font-size: 14px;
-        line-height: 16px;
-        height: 16px;
+        font-size: 0.875rem;
+        line-height: 1rem;
+        height: 1rem;
         width: 100%;
         text-overflow: ellipsis;
         overflow: hidden;
@@ -91,9 +91,9 @@ export default {
       }
       .price {
         color: red;
-        font-size: 14px;
-        line-height: 16px;
-        height: 16px;
+        font-size: 0.875rem;
+        line-height: 1rem;
+        height: 1rem;
       }
     }
   }

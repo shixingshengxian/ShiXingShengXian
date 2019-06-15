@@ -23,7 +23,7 @@
     <div>
       <div class="cart-card">
         <div class="flex-box">
-          <!-- <span class="mn-icon radio-icon" style="width: 19.2px; height: 19.2px;">
+          <!-- <span class="mn-icon radio-icon" style="width: 1.2rem; height: 1.2rem;">
             <span class="mn-icon-svg" style="width: 19.2px; height: 19.2px;">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@
   margin: 0.75rem;
   padding: 0.75rem;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 
 *,
@@ -183,7 +183,7 @@
 
 .card-title-tag {
   font-size: 0.75rem;
-  border: 1px solid #ff550f;
+  border: 0.0625rem solid #ff550f;
   color: #ff550f;
   padding: 0.2rem;
   line-height: 1;
@@ -232,7 +232,7 @@
   margin: 0.75rem;
   padding: 0.75rem;
   background-color: #fff;
-  border-radius: 6px;
+  border-radius: 0.375rem;
 }
 
 .flex-box {
@@ -289,8 +289,8 @@ svg:not(:root) {
 
 .addition-item .image {
   position: relative;
-  width: 75px;
-  height: 75px;
+  width: 4.6875rem;
+  height: 4.6875rem;
   margin-right: 0.5rem;
 }
 

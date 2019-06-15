@@ -181,15 +181,15 @@ footer {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 #mine {
-  font-size: 31px;
+  font-size: 1.9375rem;
 }
 .my {
   overflow: hidden;
-  margin-bottom: 28.8px;
+  margin-bottom: 1.8rem;
   position: relative;
   background: #f4f4f4;
   color: #000;
-  // font-size: 32px;
+  // font-size: 2rem;
   font-family: "Avenir", "PingFang SC", "\5FAE\8F6F\96C5\9ED1";
 }
 .headerNav .navBar {
@@ -426,7 +426,7 @@ img {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 1px;
+  height: 0.0625rem;
   background: #ddd;
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
@@ -471,7 +471,7 @@ img {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 1px;
+    height: 0.0625rem;
     background: #ddd;
     -webkit-transform: scaleY(0.5);
     transform: scaleY(0.5);

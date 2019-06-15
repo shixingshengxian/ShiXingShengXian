@@ -138,9 +138,18 @@ export default {
         }
       });
     },
-    buy() {
+    buy() {var goods = {
+        id: this.id,
+        title: this.datalist.title,
+        img: this.datalist.img,
+        num: 1,
+        price: this.datalist.price,
+        info: this.datalist.priceunit,
+        selected: true
+      };
+        this.$store.commit("addToCart", goods);
       this.$router.push({
-        name: "/shopcart"
+        name: "shopcart"
       });
     },
     incart() {
@@ -153,7 +162,7 @@ export default {
         info: this.datalist.priceunit,
         selected: true
       };
-      this.$store.commit("addtocart", goods);
+      this.$store.commit("addToCart", goods);
       Toast({
         message: "成功加入购物车",
         position: "bottom",
@@ -175,11 +184,11 @@ export default {
     overflow-y: auto;
   }
   .goodsheader {
-    height: 40px;
+    height: 2.5rem;
     // background: linear-gradient(90deg, #40b2eb, #66ccff);
   }
   .swipe {
-    height: 250px;
+    height: 15.625rem;
     // background-color: #000;
   }
   .goodsinfo {
@@ -188,10 +197,10 @@ export default {
     flex-direction: column;
     .title {
       color: #000;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
     }
     .price {
-      margin: 10px 0 5px 0;
+      margin: 0.625rem 0 0.3125rem 0;
       display: flex;
       justify-content: left;
       align-items: center;
@@ -214,24 +223,24 @@ export default {
       display: flex;
       justify-content: space-between;
       .sell {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
     .b-title {
-      padding-top: 10px;
+      padding-top: 0.625rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       div {
-        font-size: 12px;
+        font-size: 0.75rem;
       }
     }
   }
 
   .product-other {
     background-color: #fff;
-    margin-bottom: 10px;
-    padding: 12px 16px;
+    margin-bottom: 0.625rem;
+    padding: 0.75rem 1rem;
     font-size: 0.875rem;
     .activity {
       display: flex;
@@ -259,22 +268,22 @@ export default {
           width: 100%;
           overflow: hidden;
           font-size: 0.875rem;
-          padding: 0 15px 15px 0;
+          padding: 0 0.9375rem 0.9375rem 0;
           vertical-align: middle;
           white-space: nowrap;
           .type-name {
             color: #ff550f;
             font-size: 0.75rem;
-            padding: 0 4px;
-            border-radius: 16px;
-            border: 1px solid #f05423;
+            padding: 0 0.25rem;
+            border-radius: 1rem;
+            border: 0.0625rem solid #f05423;
             margin-right: 0.25rem;
             white-space: nowrap;
           }
           .description {
             vertical-align: middle;
             display: inline-block;
-            max-width: 200px;
+            max-width: 12.5rem;
             color: #333;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -289,8 +298,8 @@ export default {
       flex: 0 0 auto;
       -webkit-align-self: flex-start;
       align-self: flex-start;
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
     }
 
     .service {
@@ -326,7 +335,7 @@ export default {
     }
   }
   .message {
-    padding: 10px;
+    padding: 0.625rem;
     display: flex;
     flex-direction: column;
     .msg-t {
@@ -334,10 +343,10 @@ export default {
       justify-content: space-between;
       align-items: center;
       .l {
-        font-size: 16px;
+        font-size: 1rem;
       }
       .r {
-        font-size: 12px;
+        font-size: 0.75rem;
         display: flex;
         justify-content: right;
         align-items: center;
@@ -350,14 +359,14 @@ export default {
       display: flex;
       justify-content: left;
       align-items: center;
-      padding: 10px;
+      padding: 0.625rem;
       .li-icon {
         width: 3.75rem;
         height: 3.75rem;
         // height: 30%;
         border-radius: 50%;
         background-color: #ddd;
-        margin-right: 10px;
+        margin-right: 0.625rem;
         img {
           width: 100%;
         }
@@ -371,10 +380,10 @@ export default {
         flex-direction: column;
         justify-content: flex-start;
         p {
-          font-size: 12px;
+          font-size: 0.75rem;
         }
         p:nth-child(1) {
-          font-size: 14px;
+          font-size: 0.875rem;
           font-weight: bold;
         }
       }
@@ -382,19 +391,19 @@ export default {
   }
   .shopcart {
     display: flex;
-    height: 40px;
-    padding: 5px 0;
-    border-top: 1px solid #ececec;
+    height: 2.5rem;
+    padding: 0.3125rem 0;
+    border-top: 0.0625rem solid #ececec;
     justify-content: space-evenly;
     align-items: center;
     div {
-      border: 1px solid #fff;
+      border: 0.0625rem solid #fff;
       color: #fff;
-      width: 120px;
-      font-size: 14px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 20px;
+      width: 7.5rem;
+      font-size: 0.875rem;
+      height: 1.875rem;
+      line-height: 1.875rem;
+      border-radius: 1.25rem;
     }
     .gotobuy {
       background: linear-gradient(90deg, #40b2eb, #66ccff);

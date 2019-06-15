@@ -21,7 +21,7 @@
 
 
 <script>
-import Axios from "axios";
+// import Axios from "axios";
 // import goodsheader from "../AllCommon/Header.vue";
 export default {
   data() {
@@ -31,9 +31,11 @@ export default {
   },
   created() {
     // this.getdatalist();
+     this.$store.commit('getDataList')
   },
   components: {
     // goodsheader
+   
   },
   methods: {
     // getdatalist() {

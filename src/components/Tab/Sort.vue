@@ -130,7 +130,7 @@ export default {
 }
 .category-menu-list > li > a.is-active {
   background: #fff;
-  border-left: 3px solid #45ac2a;
+  border-left: 0.1875rem solid #45ac2a;
   color: #45ac2a;
 }
 .category-section {
@@ -153,8 +153,8 @@ export default {
   background-color: #ddd;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  -webkit-filter: blur(50px);
-  filter: blur(50px);
+  -webkit-filter: blur(3.125rem);
+  filter: blur(3.125rem);
 }
 .category-square-item > .title {
   font-size: 0.875rem;
@@ -170,12 +170,12 @@ export default {
   //   padding: 0 0.25rem;
   margin-bottom: 1rem;
   img {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
   }
 }
 .lunbo {
-  height: 100px;
+  height: 6.25rem;
 }
 .category-contents {
   position: relative;
@@ -199,23 +199,23 @@ export default {
 }
 .category-banner {
   width: 100%;
-  height: -webkit-calc((100vw - 100px - 1rem)/440 * 160);
-  height: calc((100vw - 100px - 1rem) / 440 * 160);
-  max-height: -webkit-calc((640px - 100px - 1rem)/440 * 160);
-  max-height: calc((640px - 100px - 1rem) / 440 * 160);
+  height: -webkit-calc((100vw - 6.25rem - 1rem)/440 * 160);
+  height: calc((100vw - 6.25rem - 1rem) / 440 * 160);
+  max-height: -webkit-calc((40rem - 6.25rem - 1rem)/440 * 160);
+  max-height: calc((40rem - 6.25rem - 1rem) / 440 * 160);
   margin-bottom: 1rem;
 }
 .category-menu-list > li > a {
   display: block;
   text-decoration: none;
   color: #666;
-  height: 46px;
-  line-height: 46px;
+  height: 2.875rem;
+  line-height: 2.875rem;
   text-align: center;
 }
 .category-menu-list > li > a.is-active {
   background: #fff;
-  border-left: 3px solid #45ac2a;
+  border-left: 0.1875rem solid #45ac2a;
   color: #45ac2a;
 }
 li {
@@ -223,7 +223,7 @@ li {
   text-align: -webkit-match-parent;
 }
 .category-menu-list > li {
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom: 0.0625rem solid #dfdfdf;
 }
 .category-menu-list {
   width: 100%;
@@ -243,9 +243,9 @@ li {
 .category-menu {
   position: relative;
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 100px;
-  flex: 0 0 100px;
-  border-right: 1px solid #ddd;
+  -webkit-flex: 0 0 6.25rem;
+  flex: 0 0 6.25rem;
+  border-right: 0.0625rem solid #ddd;
 }
 .category-flexes {
   position: absolute;
@@ -263,7 +263,7 @@ li {
 .fresh-app {
   position: relative;
   width: 100%;
-  max-width: 640px;
+  max-width: 40rem;
   margin: 0 auto;
   height: 100%;
 }

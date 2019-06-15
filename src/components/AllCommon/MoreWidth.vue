@@ -21,13 +21,16 @@
 </template>
 
 <script>
-import Axios from "axios";
+// import Axios from "axios";
 export default {
   data () {
     return {
       datalist:this.$store.state.getdatalist
       ,datalistimg:[],
     }
+  },
+  created () {
+     this.$store.commit('getDataList')
   },
   mounted() {
     // this.getdatalist();
@@ -57,28 +60,28 @@ export default {
 
   .cg-longul {
     // background-color: #ccc;
-    width: 1200px;
+    width: 75rem;
     display: flex;
     justify-content: left;
-    padding: 0 10px;
+    padding: 0 0.625rem;
     .cg-longli {
-      width: 100px;
+      width: 6.25rem;
 
       img {
         width: 100%;
       }
       .cg-longtitle {
-        width: 100px;
+        width: 6.25rem;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
         margin: 0 auto;
-        font-size: 12px;
+        font-size: 0.75rem;
       }
       .cg-longfullegg {
         span {
           text-overflow: ellipsis;
-          padding: 1px 0.2rem;
+          padding: 0.0625rem 0.2rem;
           border-radius: 1rem;
           overflow: hidden;
           white-space: nowrap;
@@ -86,7 +89,7 @@ export default {
           line-height: 1;
           color: #ff550f;
           font-size: 0.6875rem;
-          border: 1px solid #ff550f;
+          border: 0.0625rem solid #ff550f;
           background-color: #fff;
           max-width: 100%;
         }
@@ -94,18 +97,18 @@ export default {
       .cg-longprice {
         display: flex;
         justify-content: space-between;
-        font-size: 12px;
+        font-size: 0.75rem;
         align-items: flex-start;
         .cg-longunit {
           color: #000;
           text-align: left;
         }
         .cg-longcart {
-          border: 1px solid #eee;
+          border: 0.0625rem solid #eee;
           border-radius: 50%;
-          height: 20px;
-          width: 20px;
-          font-size: 18px;
+          height: 1.25rem;
+          width: 1.25rem;
+          font-size: 1.125rem;
         }
       }
     }
